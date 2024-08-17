@@ -46,15 +46,16 @@ const Navbar = () => {
 
           {/* shopping cart  */}
 
-          <button>
-            <div className="flex items-center justify-center relative">
-              <i className="ri-shopping-cart-line text-2xl text-white"></i>
-              <div className="w-5 h-5 rounded-full bg-red-600 text-white flex justify-center items-center absolute -top-2 -right-2">
-                0
+          <Link to={"/cart"}>
+            <button>
+              <div className="flex items-center justify-center relative">
+                <i className="ri-shopping-cart-line text-2xl text-white"></i>
+                <div className="w-5 h-5 rounded-full bg-red-600 text-white flex justify-center items-center absolute -top-2 -right-2">
+                  0
+                </div>
               </div>
-            </div>
-          </button>
-
+            </button>
+          </Link>
           {/* menu  */}
           <button onClick={() => setVisible(visible === 200 ? 0 : 200)}>
             <i className="ri-menu-line text-white text-xl md:hidden"></i>
