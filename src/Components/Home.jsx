@@ -1,6 +1,5 @@
 import React from "react";
-import Navbar from "./Navbar";
-import Footer from "./Footer";
+
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation } from "swiper/modules";
 
@@ -12,7 +11,6 @@ import "./styles.css";
 const Home = () => {
   return (
     <>
-      <Navbar />
       <div>
         <header>
           <Swiper navigation={true} modules={[Navigation]} className="mySwiper">
@@ -32,24 +30,22 @@ const Home = () => {
         </header>
 
         <div className="w-full h-auto bg-gray-400 ">
-        <div className="grid grid-cols-1 md:grid-cols-4 w-10/12 mx-auto pt-6 pb-6 gap-4">
-          <div>
-            <img src="./images/products-sp.png" alt="Products" />
+          <div className="grid grid-cols-1 md:grid-cols-4 w-10/12 mx-auto pt-6 pb-6 gap-4">
+            <div>
+              <img src="./images/products-sp.png" alt="Products" />
+            </div>
+            <div>
+              <img src="./images/products-sp2.png" alt="Products2" />
+            </div>
+            <div>
+              <img src="./images/products-sp3.png" alt="Products3" />
+            </div>
+            <div>
+              <img src="./images/products-sp4.png" alt="Products4" />
+            </div>
           </div>
-          <div>
-            <img src="./images/products-sp2.png" alt="Products2" />
-          </div>
-          <div>
-            <img src="./images/products-sp3.png" alt="Products3" />
-          </div>
-          <div>
-            <img src="./images/products-sp4.png" alt="Products4" />
-          </div>
-        </div>
         </div>
       </div>
-
-      <Footer />
     </>
   );
 };

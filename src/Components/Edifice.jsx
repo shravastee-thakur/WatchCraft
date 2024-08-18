@@ -1,9 +1,8 @@
 import React, { useState } from "react";
-import Navbar from "./Navbar";
-import Footer from "./Footer";
+
 import { watchData } from "../Data/edifice";
 
-const Edifice = () => {
+const Edifice = ({ AddToCart }) => {
   const [sortedData, setSortedData] = useState(watchData);
   const [sortOrder, setSortOrder] = useState("asc");
 
@@ -22,7 +21,6 @@ const Edifice = () => {
 
   return (
     <>
-      <Navbar />
       <div>
         <header>
           <img src="./images/edifice.png" alt="Edifice" />
@@ -55,7 +53,10 @@ const Edifice = () => {
                         ₹ {watch.price.toLocaleString()} (inclusive of all
                         taxes)
                       </p>
-                      <button className="bg-black text-white py-2 px-4 mt-4 rounded-xl hover:bg-blue-800">
+                      <button
+                        onClick={() => AddToCart(watch)}
+                        className="bg-black text-white py-2 px-4 mt-4 rounded-xl hover:bg-blue-800"
+                      >
                         Add to Cart
                       </button>
                     </div>
@@ -66,8 +67,6 @@ const Edifice = () => {
           </div>
         </section>
       </div>
-
-      <Footer />
     </>
   );
 };

@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 
-const Navbar = () => {
+const Navbar = ({ cart }) => {
   const [profile, setProfile] = useState(false);
   const [visible, setVisible] = useState(200);
   return (
@@ -51,7 +51,7 @@ const Navbar = () => {
               <div className="flex items-center justify-center relative">
                 <i className="ri-shopping-cart-line text-2xl text-white"></i>
                 <div className="w-5 h-5 rounded-full bg-red-600 text-white flex justify-center items-center absolute -top-2 -right-2">
-                  0
+                  {cart.length}
                 </div>
               </div>
             </button>

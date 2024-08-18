@@ -1,6 +1,5 @@
 import React, { useState } from "react";
-import Navbar from "./Navbar";
-import Footer from "./Footer";
+
 import { newWatchData } from "../Data/enticer";
 
 const Enticer = () => {
@@ -21,7 +20,7 @@ const Enticer = () => {
   };
   return (
     <>
-      <Navbar />
+
 
       <div>
         <header>
@@ -68,7 +67,7 @@ const Enticer = () => {
         </section>
       </div>
 
-      <Footer />
+
     </>
   );
 };

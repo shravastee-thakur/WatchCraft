@@ -1,12 +1,10 @@
 import React, { useState } from "react";
-import Navbar from "./Navbar";
-import Footer from "./Footer";
+
 
 const SignUp = () => {
   const [password, setPassword] = useState("password");
   return (
     <>
-      <Navbar />
       <div className="w-full md:h-screen flex justify-center items-center">
         <div className="w-4/5 p-4 md:w-1/3 bg-white md:p-8 rounded-lg ">
           <h1 className="text-xl md:text-3xl font-semibold text-center mb-2">
@@ -72,7 +70,6 @@ const SignUp = () => {
           </form>
         </div>
       </div>
-      <Footer />
     </>
   );
 };
