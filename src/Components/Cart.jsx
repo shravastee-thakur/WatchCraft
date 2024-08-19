@@ -12,11 +12,15 @@ const Cart = ({ cart, handleRemove }) => {
     <>
       <div>
         <div className="container mx-auto mt-10">
-          <div className="flex shadow-md my-10">
-            <div className="w-3/4 bg-white px-10 py-10">
-              <div className="flex justify-between border-b pb-8">
-                <h1 className="font-semibold text-2xl">Shopping Cart</h1>
-                <h2 className="font-semibold text-2xl">{cart.length} Items</h2>
+          <div className="flex flex-col justify-center w-full md:flex md:flex-row shadow-md my-10">
+            <div className="w-full md:w-3/4 bg-white px-3 md:px-10 py-10">
+              <div className="flex justify-between border-b pb-3 md:pb-8">
+                <h1 className="text-base font-semibold md:text-2xl">
+                  Shopping Cart
+                </h1>
+                <h2 className="text-base font-semibold md:text-2xl">
+                  {cart.length} Items
+                </h2>
               </div>
               <div className="flex mt-10 mb-5">
                 <h3 className="font-semibold text-gray-600 text-xs uppercase w-2/5">
@@ -43,10 +47,12 @@ const Cart = ({ cart, handleRemove }) => {
                   >
                     <div className="flex w-2/5">
                       <div className="w-20">
-                        <img className="h-24" src={item.img} />
+                        <img className="h-19 w-auto md:h-24" src={item.img} />
                       </div>
                       <div className="flex flex-col justify-between ml-4 flex-grow">
-                        <span className="font-bold text-sm">{item.model}</span>
+                        <span className="font-semibold md:font-bold text-sm">
+                          {item.model}
+                        </span>
                         <span className="text-red-500 text-xs">
                           {item.brand}
                         </span>
@@ -79,15 +85,20 @@ const Cart = ({ cart, handleRemove }) => {
 
             {/* cart section ended */}
 
-            <div id="summary" className="w-1/4 px-8 py-10">
-              <h1 className="font-semibold text-2xl border-b pb-8">
+            <div
+              id="summary"
+              className="w-full md:w-1/4 px-8 py-10 bg-amber-50"
+            >
+              <h1 className="text-base font-semibold md:text-2xl border-b pb-8">
                 Order Summary
               </h1>
               <div className="flex justify-between mt-10 mb-5">
                 <span className="font-semibold text-sm uppercase">
                   Items {cart.length}
                 </span>
-                <span className="font-semibold text-sm">₹{total()}</span>
+                <span className="ml-20 md:font-semibold text-sm">
+                  ₹{total()}
+                </span>
               </div>
 
               <div className="border-t mt-8">
@@ -96,16 +107,12 @@ const Cart = ({ cart, handleRemove }) => {
                   <span>₹{total()}</span>
                 </div>
 
-                <button className="bg-green-700 hover:bg-blue-600 px-5 py-2 mt-8 text-sm text-white uppercase w-full">
+                <button className="bg-green-600 hover:bg-green-800 px-5 py-2 mt-8 text-sm text-white uppercase w-full">
                   Pay Now
                 </button>
 
-                <button className="bg-red-500 hover:bg-red-600 px-5 py-2 mt-8 text-sm text-white uppercase w-full">
+                <button className="bg-blue-600 hover:bg-blue-800 px-5 py-2 mt-8 text-sm text-white uppercase w-full">
                   Cash on Delivery
-                </button>
-
-                <button className="bg-indigo-500 font-semibold hover:bg-indigo-600 mt-8 py-3 text-sm text-white uppercase w-full">
-                  Checkout
                 </button>
               </div>
             </div>
