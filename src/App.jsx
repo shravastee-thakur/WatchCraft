@@ -36,11 +36,11 @@ function App() {
   };
   return (
     <BrowserRouter>
-      <Navbar cart={cart}/>
+      <Navbar cart={cart} />
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/edifice" element={<Edifice AddToCart={AddToCart} />} />
-        <Route path="/enticer" element={<Enticer />} />
+        <Route path="/enticer" element={<Enticer AddToCart={AddToCart} />} />
         <Route path="/login" element={<Login />} />
         <Route path="/signup" element={<SignUp />} />
         <Route

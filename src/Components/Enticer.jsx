@@ -2,7 +2,7 @@ import React, { useState } from "react";
 
 import { newWatchData } from "../Data/enticer";
 
-const Enticer = () => {
+const Enticer = ({ AddToCart }) => {
   const [sortedData, setSortedData] = useState(newWatchData);
   const [sortOrder, setSortOrder] = useState("asc");
 
@@ -20,8 +20,6 @@ const Enticer = () => {
   };
   return (
     <>
-
-
       <div>
         <header>
           <img src="./images/enticer.png" alt="Enticer" />
@@ -55,7 +53,10 @@ const Enticer = () => {
                         ₹ {watch.price.toLocaleString()} (inclusive of all
                         taxes)
                       </p>
-                      <button className="bg-black text-white py-2 px-4 mt-4 rounded-xl hover:bg-blue-800">
+                      <button
+                        onClick={() => AddToCart(watch)}
+                        className="bg-black text-white py-2 px-4 mt-4 rounded-xl hover:bg-blue-800"
+                      >
                         Add to Cart
                       </button>
                     </div>
@@ -66,8 +67,6 @@ const Enticer = () => {
           </div>
         </section>
       </div>
-
-
     </>
   );
 };

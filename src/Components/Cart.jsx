@@ -1,6 +1,8 @@
-import React from "react";
+import React, { useState } from "react";
 
 const Cart = ({ cart, handleRemove }) => {
+  const [showModal, setShowModal] = useState(false);
+
   const total = () => {
     let total = 0;
     cart.forEach((item) => {
@@ -8,8 +10,36 @@ const Cart = ({ cart, handleRemove }) => {
     });
     return total.toLocaleString();
   };
+
+  const handleShow = () => {
+    setShowModal(true);
+  };
   return (
     <>
+      {cart.length > 0
+        ? showModal && (
+            <div className=" w-[400px] h-[150px] bg-lime-50 rounded-xl flex flex-col justify-center items-center gap-4 z-30 fixed top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
+              <div>
+                <h2 className="text-xl font-bold">
+                  Your order No. #{Math.round(Math.random() * 100000)}
+                </h2>
+                <p className="mt-2">You can pay with card or UPI</p>
+                <p>Thank you for shopping with us.</p>
+              </div>
+              <div>
+                <div>
+                  <button
+                    onClick={() => setShowModal(false)}
+                    className="bg-blue-700 text-white px-6 py-1 rounded"
+                  >
+                    Ok
+                  </button>
+                </div>
+              </div>
+            </div>
+          )
+        : null}
+
       <div>
         <div className="container mx-auto mt-10">
           <div className="flex flex-col justify-center w-full md:flex md:flex-row shadow-md my-10">
@@ -111,7 +141,10 @@ const Cart = ({ cart, handleRemove }) => {
                   Pay Now
                 </button>
 
-                <button className="bg-blue-600 hover:bg-blue-800 px-5 py-2 mt-8 text-sm text-white uppercase w-full">
+                <button
+                  onClick={handleShow}
+                  className="bg-blue-700 hover:bg-blue-800 px-5 py-2 mt-8 text-sm text-white uppercase w-full"
+                >
                   Cash on Delivery
                 </button>
               </div>

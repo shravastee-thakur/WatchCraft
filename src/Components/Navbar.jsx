@@ -31,7 +31,7 @@ const Navbar = ({ cart }) => {
               <button onClick={() => setProfile(!profile)}>
                 <i className="ri-user-fill text-white text-xl"></i>
                 {profile && (
-                  <div className="absolute top-14 right-0 bg-green-300 w-[180px] p-6 shadow-lg">
+                  <div className="absolute top-14 right-0 bg-gray-200 w-[180px] p-6 shadow-lg">
                     <h1 className="text-lg font-semibold">Shravastee</h1>
                     <div className="border h-px my-4" />
                     <button>
