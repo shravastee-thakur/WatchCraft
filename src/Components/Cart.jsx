@@ -18,7 +18,7 @@ const Cart = ({ cart, handleRemove }) => {
     <>
       {cart.length > 0
         ? showModal && (
-            <div className=" w-[400px] h-[150px] bg-lime-50 rounded-xl flex flex-col justify-center items-center gap-4 z-30 fixed top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
+            <div className=" w-[400px] h-[200px] bg-lime-50 rounded-xl flex flex-col justify-center items-center gap-4 z-30 fixed top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
               <div>
                 <h2 className="text-xl font-bold">
                   Your order No. #{Math.round(Math.random() * 100000)}
@@ -38,7 +38,12 @@ const Cart = ({ cart, handleRemove }) => {
               </div>
             </div>
           )
-        : null}
+        : <div className=" w-[400px] h-[200px] bg-lime-50 rounded-xl flex flex-col justify-center items-center gap-4 z-30 fixed top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
+          <img className = "w-[100px] h-[100px]" src="./images/emptycart.png" alt="" />
+          <h1 className="text-2xl font-semibold flex justify-center items-center">Your cart is empty</h1>
+            
+            </div>}
+        
 
       <div>
         <div className="container mx-auto mt-10">

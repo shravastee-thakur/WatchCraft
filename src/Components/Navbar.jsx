@@ -24,9 +24,9 @@ const Navbar = ({ cart }) => {
             <Link to={"/login"}>
               <li className="text-white hover:text-yellow-400">Log In</li>
             </Link>
-            <Link to={"/signup"}>
+            {/* <Link to={"/signup"}>
               <li className="text-white hover:text-yellow-400">Sign Up</li>
-            </Link>
+            </Link> */}
             <li>
               <button onClick={() => setProfile(!profile)}>
                 <i className="ri-user-fill text-white text-xl"></i>

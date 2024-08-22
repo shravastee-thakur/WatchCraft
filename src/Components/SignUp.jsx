@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 
-
 const SignUp = () => {
   const [password, setPassword] = useState("password");
+
   return (
     <>
       <div className="w-full md:h-screen flex justify-center items-center">
@@ -11,12 +11,13 @@ const SignUp = () => {
             Register
           </h1>
           <p className="mb-6 text-center">New users create your account</p>
-          <form className="space-y-4">
+          <form className="space-y-4" onSubmit={signup}>
             <div className="flex flex-col">
               <label className="text-sm font-semibold md:text-lg">
                 Fullname
               </label>
               <input
+                onChange={handleChange}
                 required
                 type="text"
                 placeholder="Enter your name"
@@ -28,6 +29,7 @@ const SignUp = () => {
             <div className="flex flex-col">
               <label className="text-sm font-semibold md:text-lg">Email</label>
               <input
+                onChange={handleChange}
                 required
                 type="email"
                 placeholder="Enter your email"
@@ -41,6 +43,7 @@ const SignUp = () => {
                 Password
               </label>
               <input
+                onChange={handleChange}
                 required
                 type={password}
                 placeholder="********"
@@ -67,6 +70,12 @@ const SignUp = () => {
                 Sign Up
               </button>
             </div>
+
+            {error && (
+              <div className="mt-2 bg-rose-200 p-2 ">
+                <p>{error}</p>
+              </div>
+            )}
           </form>
         </div>
       </div>
