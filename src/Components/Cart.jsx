@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
 
 const Cart = ({ cart, handleRemove }) => {
   const [showModal, setShowModal] = useState(false);
@@ -16,37 +17,48 @@ const Cart = ({ cart, handleRemove }) => {
   };
   return (
     <>
-      {cart.length > 0
-        ? showModal && (
-            <div className=" w-[400px] h-[200px] bg-lime-50 rounded-xl flex flex-col justify-center items-center gap-4 z-30 fixed top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
+      {cart.length > 0 ? (
+        showModal && (
+          <div className=" w-[400px] h-[200px] bg-lime-50 rounded-xl flex flex-col justify-center items-center gap-4 z-30 fixed top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
+            <div>
+              <h2 className="text-xl font-bold">
+                Your order No. #{Math.round(Math.random() * 100000)}
+              </h2>
+              <p className="mt-2">You can pay with card or UPI</p>
+              <p>Thank you for shopping with us.</p>
+            </div>
+            <div>
               <div>
-                <h2 className="text-xl font-bold">
-                  Your order No. #{Math.round(Math.random() * 100000)}
-                </h2>
-                <p className="mt-2">You can pay with card or UPI</p>
-                <p>Thank you for shopping with us.</p>
-              </div>
-              <div>
-                <div>
-                  <button
-                    onClick={() => setShowModal(false)}
-                    className="bg-blue-700 text-white px-6 py-1 rounded"
-                  >
-                    Ok
-                  </button>
-                </div>
+                <button
+                  onClick={() => setShowModal(false)}
+                  className="bg-blue-700 text-white px-6 py-1 rounded"
+                >
+                  Ok
+                </button>
               </div>
             </div>
-          )
-        : <div className=" w-[400px] h-[200px] bg-lime-50 rounded-xl flex flex-col justify-center items-center gap-4 z-30 fixed top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
-          <img className = "w-[100px] h-[100px]" src="./images/emptycart.png" alt="" />
-          <h1 className="text-2xl font-semibold flex justify-center items-center">Your cart is empty</h1>
-            
-            </div>}
-        
+          </div>
+        )
+      ) : (
+        <div className=" w-[400px] h-[200px] bg-lime-50 rounded-xl flex flex-col justify-center items-center gap-4 z-30 fixed top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
+          <img
+            className="w-[100px] h-[100px]"
+            src="./images/emptycart.png"
+            alt=""
+          />
+          <h1 className="text-2xl font-semibold flex justify-center items-center">
+            Your cart is empty
+          </h1>
+          <Link to={"/"}>
+            <button className="bg-blue-700 text-white px-6 py-1 rounded">
+              Shop Now
+            </button>
+          </Link>
+        </div>
+      )}
 
-      <div>
-        <div className="container mx-auto mt-10">
+      <div className="bg-grey-100 w-full h-screen">
+        <div className="container mx-auto mt-10 bg-g">
           <div className="flex flex-col justify-center w-full md:flex md:flex-row shadow-md my-10">
             <div className="w-full md:w-3/4 bg-white px-3 md:px-10 py-10">
               <div className="flex justify-between border-b pb-3 md:pb-8">
@@ -142,9 +154,10 @@ const Cart = ({ cart, handleRemove }) => {
                   <span>₹{total()}</span>
                 </div>
 
+                <Link to={"/checkout"}>
                 <button className="bg-green-600 hover:bg-green-800 px-5 py-2 mt-8 text-sm text-white uppercase w-full">
                   Pay Now
-                </button>
+                </button></Link>
 
                 <button
                   onClick={handleShow}

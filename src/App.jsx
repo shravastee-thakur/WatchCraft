@@ -11,6 +11,7 @@ import Cart from "./Components/Cart";
 import { useState } from "react";
 import Navbar from "./Components/Navbar";
 import Footer from "./Components/Footer";
+import Checkout from "./Components/Checkout";
 
 function App() {
   const [cart, setCart] = useState([]);
@@ -43,12 +44,14 @@ function App() {
         <Route path="/enticer" element={<Enticer AddToCart={AddToCart} />} />
         <Route path="/login" element={<Login />} />
         <Route path="/signup" element={<SignUp />} />
+        <Route path="/checkout" element={<Checkout />} />
         <Route
           path="/cart"
           element={<Cart cart={cart} handleRemove={handleRemove} />}
         />
         <Route path="*" element={<NotFound />} />
       </Routes>
+
       <Footer />
     </BrowserRouter>
   );

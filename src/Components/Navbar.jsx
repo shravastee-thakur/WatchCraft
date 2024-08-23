@@ -28,18 +28,8 @@ const Navbar = ({ cart }) => {
               <li className="text-white hover:text-yellow-400">Sign Up</li>
             </Link> */}
             <li>
-              <button onClick={() => setProfile(!profile)}>
+              <button>
                 <i className="ri-user-fill text-white text-xl"></i>
-                {profile && (
-                  <div className="absolute top-14 right-0 bg-gray-200 w-[180px] p-6 shadow-lg">
-                    <h1 className="text-lg font-semibold">Shravastee</h1>
-                    <div className="border h-px my-4" />
-                    <button>
-                      <i className="ri-logout-circle-r-line mr-2"></i>
-                      Logout
-                    </button>
-                  </div>
-                )}
               </button>
             </li>
           </ul>

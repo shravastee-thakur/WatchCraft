@@ -5,7 +5,7 @@ const Login = () => {
   const [password, setPassword] = useState("password");
   return (
     <>
-      <div className="w-full md:h-screen flex justify-center items-center">
+      <div className="w-full bg-gray-100 md:h-screen flex justify-center items-center">
         <div className="w-4/5 p-4 md:w-1/3 bg-white md:p-8 rounded-lg ">
           <h1 className="text-xl md:text-3xl font-semibold text-center mb-2">
             Login
@@ -56,7 +56,7 @@ const Login = () => {
           </form>
           <div className="text-center mt-2">
             Don't have an account. Register now.
-            <Link to="/signup">
+            <Link to={"/signup"}>
               <span className="text-blue-600">Click Here</span>
             </Link>
           </div>
