@@ -44,7 +44,7 @@ function App() {
         <Route path="/enticer" element={<Enticer AddToCart={AddToCart} />} />
         <Route path="/login" element={<Login />} />
         <Route path="/signup" element={<SignUp />} />
-        <Route path="/checkout" element={<Checkout />} />
+        <Route path="/checkout" element={<Checkout cart={cart}/>} />
         <Route
           path="/cart"
           element={<Cart cart={cart} handleRemove={handleRemove} />}

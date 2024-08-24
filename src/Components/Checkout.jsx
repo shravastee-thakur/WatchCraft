@@ -1,10 +1,17 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-const Checkout = () => {
+const Checkout = ({ cart }) => {
+  const total = () => {
+    let total = 0;
+    cart.forEach((item) => {
+      total += item.price * item.quantity;
+    });
+    return total.toLocaleString();
+  };
   return (
     <div>
-      <h1 className="text-xl md:text-3xl font-semibold text-center mb-4">
+      <h1 className="text-xl md:text-2xl font-semibold text-center md:mt-8 mt-4">
         Checkout
       </h1>
       <div className="mx-auto gap-10 flex justify-center items-start flex-col md:flex md:flex-row md:gap-20 bg-white">
@@ -113,17 +120,20 @@ const Checkout = () => {
             Order Summary
           </h1>
           <div className="flex justify-between mt-10 mb-5">
-            <span className="ml-20 md:font-semibold text-sm">₹{}</span>
+            <span className="md:font-semibold text-sm">
+              ITEMS {cart.length}
+            </span>
+            <span className="ml-20 md:font-semibold text-sm">₹{total()}</span>
           </div>
 
           <div className="border-t mt-8">
             <div className="flex font-semibold justify-between py-6 text-sm uppercase">
               <span>Total cost</span>
-              <span>₹{}</span>
+              <span>₹{total()}</span>
             </div>
 
             <button className="bg-green-600 hover:bg-green-800 px-5 py-2 mt-8 text-sm text-white uppercase w-full">
-              Pay Now
+              Check Out
             </button>
           </div>
         </div>
