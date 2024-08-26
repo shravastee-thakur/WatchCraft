@@ -16,7 +16,7 @@ const Cart = ({ cart, handleRemove }) => {
     setShowModal(true);
   };
   return (
-    <>
+    <div>
       {cart.length > 0 ? (
         showModal && (
           <div className=" w-[400px] h-[200px] bg-lime-50 rounded-xl flex flex-col justify-center items-center gap-4 z-30 fixed top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
@@ -57,8 +57,8 @@ const Cart = ({ cart, handleRemove }) => {
         </div>
       )}
 
-      <div className="bg-grey-100 w-full h-screen">
-        <div className="container mx-auto mt-10 bg-g">
+      <div className="bg-grey-100 w-full">
+        <div className="container md:mt-10">
           <div className="flex flex-col justify-center w-full md:flex md:flex-row shadow-md my-10">
             <div className="w-full md:w-3/4 bg-white px-3 md:px-10 py-10">
               <div className="flex justify-between border-b pb-3 md:pb-8">
@@ -148,7 +148,7 @@ const Cart = ({ cart, handleRemove }) => {
                 </span>
               </div>
 
-              <div className="border-t mt-8">
+              <div className="border-t mt-8 mb-20">
                 <div className="flex font-semibold justify-between py-6 text-sm uppercase">
                   <span>Total cost</span>
                   <span>₹{total()}</span>
@@ -161,7 +161,7 @@ const Cart = ({ cart, handleRemove }) => {
 
                 <button
                   onClick={handleShow}
-                  className="bg-blue-700 hover:bg-blue-800 px-5 py-2 mt-8 text-sm text-white uppercase w-full"
+                  className="bg-blue-700 hover:bg-blue-800 px-5 py-2  mb-10 mt-8 text-sm text-white uppercase w-full"
                 >
                   Cash on Delivery
                 </button>
@@ -170,7 +170,7 @@ const Cart = ({ cart, handleRemove }) => {
           </div>
         </div>
       </div>
-    </>
+    </div>
   );
 };
 

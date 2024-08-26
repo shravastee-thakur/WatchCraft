@@ -52,7 +52,7 @@ export const newWatchData = [
     id: 32,
     img: "./images/32.png",
     brand: "ENTICER",
-    model: "MTP-E715C-8AV",
+    model: "MTP-E715CM-8AV",
     price: 7695,
   },
   {
@@ -73,7 +73,7 @@ export const newWatchData = [
     id: 35,
     img: "./images/35.png",
     brand: "ENTICER",
-    model: "MTP-E715L-5AV",
+    model: "MTP-E715LS-5AV",
     price: 7695,
   },
   {
@@ -94,14 +94,14 @@ export const newWatchData = [
     id: 38,
     img: "./images/38.png",
     brand: "ENTICER",
-    model: "MTP-VD200L-2B",
+    model: "MTP-VD200M-2B",
     price: 4795,
   },
   {
     id: 39,
     img: "./images/39.png",
     brand: "ENTICER",
-    model: "MTP-B120B-8AV",
+    model: "MTP-B120M-8AV",
     price: 7495,
   },
   {
@@ -122,7 +122,7 @@ export const newWatchData = [
     id: 42,
     img: "./images/42.png",
     brand: "ENTICER",
-    model: "MTP-E705D-2EV",
+    model: "MTP-E705AD-2EV",
     price: 5395,
   },
   {

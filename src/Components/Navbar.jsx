@@ -29,7 +29,9 @@ const Navbar = ({ cart }) => {
             </Link> */}
             <li>
               <button>
-                <i className="ri-user-fill text-white text-xl"></i>
+                <Link to={"/profile"}>
+                  <i className="ri-user-fill text-white text-xl"></i>
+                </Link>
               </button>
             </li>
           </ul>
@@ -66,8 +68,18 @@ const Navbar = ({ cart }) => {
             </div>
           </div>
           <ul className="font-semibold flex flex-col gap-8 items-center overflow-hidden md:hidden">
+            <li>
+              <p className="text-center">Welcome</p>
+              <span className="text-lg font-semibold text-center">
+                Shravastee
+              </span>
+            </li>
+
             <Link to={"/"}>
-              <li className="text-black hover:text-red-400 pt-12">Home</li>
+              <li className="text-black hover:text-red-400 pt-2">Home</li>
+            </Link>
+            <Link to={"/profile"}>
+              <li className="text-black hover:text-red-400">Profile</li>
             </Link>
             <Link to={"/edifice"}>
               <li className="text-black hover:text-red-400">Edifice</li>
@@ -78,9 +90,8 @@ const Navbar = ({ cart }) => {
             <Link to={"/login"}>
               <li className="text-black hover:text-red-400">Log In</li>
             </Link>
-            <Link to={"/logout"}>
-              <li className="text-black hover:text-red-400">Log out</li>
-            </Link>
+
+            <li className="text-black hover:text-red-400">Log out</li>
           </ul>
         </div>
       </aside>

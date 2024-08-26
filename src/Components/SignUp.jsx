@@ -75,9 +75,7 @@ const SignUp = () => {
         </p>
         <form className="space-y-4">
           <div className="flex flex-col">
-            <label className="text-sm font-semibold md:text-lg">
-              Full Name
-            </label>
+            <label className="text-sm font-semibold md:text-lg">Username</label>
             <input
               required
               type="text"

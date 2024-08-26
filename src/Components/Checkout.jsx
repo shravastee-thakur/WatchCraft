@@ -15,11 +15,11 @@ const Checkout = ({ cart }) => {
         Checkout
       </h1>
       <div className="mx-auto gap-10 flex justify-center items-start flex-col md:flex md:flex-row md:gap-20 bg-white">
-        <div className="w-4/5 p-4 md:w-3/5 md:p-8">
-          <h3 className="font-bold text-lg text-red-700">
+        <div className="w-full p-4 md:w-3/5 md:p-8">
+          <h3 className="font-bold text-base md:text-lg text-red-700">
             Select a delivery address
           </h3>
-          <div className="border border-gray-300 p-4 mt-2 ">
+          <div className="border border-gray-300 p-4 mt-2">
             <div className="flex items-start gap-4">
               <div>
                 <input
@@ -41,16 +41,18 @@ const Checkout = ({ cart }) => {
               </div>
             </div>
 
-            <div className="flex justify-between items-center">
-              <button className="bg-yellow-500 py-1 px-3 mt-5 rounded-xl">
+            <div className="md:flex md:justify-between md:items-center">
+              <button className="bg-yellow-500 py-1 px-6 text-sm md:px-3 mt-5 rounded-xl">
                 Use this address
               </button>
-              <Link to="/signup">
-                <h4 className="text-blue-500 mt-6">Add a new address</h4>
+              <Link to="/profile">
+                <h4 className="text-blue-500 mt-3 md:mt-6">
+                  Add a new address
+                </h4>
               </Link>
             </div>
           </div>
-          <h3 className="font-bold text-lg text-red-700 pt-8">
+          <h3 className="font-bold text-base md:text-lg text-red-700 pt-8">
             Select a payment method
           </h3>
           <div className="border border-gray-300 p-4 mt-2 ">
@@ -64,22 +66,22 @@ const Checkout = ({ cart }) => {
             <span className="ml-2">Credit or Debit Card</span>
             <div className="flex gap-4 items-center mt-2">
               <img
-                className="w-[50px] h-[50px]"
+                className="w-[40px] h-[40px] md:w-[50px] md:h-[50px]"
                 src="./images/Visalogo.png"
                 alt=""
               />
               <img
-                className="w-[50px] h-[40px]"
+                className="w[40px] h-[30px] md:w-[50px] md:h-[40px]"
                 src="./images/mastercardlogo.png"
                 alt=""
               />
               <img
-                className="w-[70px] h-auto"
+                className="w-[60px] h-auto md:w-[70px] md:h-auto"
                 src="./images/rupaylogo.png"
                 alt=""
               />
               <img
-                className="w-[70px] h-[70px]"
+                className="w-[70px] h-[50px] md:w-[70px] md:h-[70px]"
                 src="./images/maestro.png"
                 alt=""
               />

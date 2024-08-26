@@ -24,7 +24,7 @@ export const watchData = [
     id: 4,
     img: "./images/4.png",
     brand: "EDIFICE",
-    model: "ECB-2200HTR-1A",
+    model: "ECB-2200TR-1A",
     price: 39995,
   },
   {

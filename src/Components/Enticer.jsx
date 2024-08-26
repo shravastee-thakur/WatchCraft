@@ -43,19 +43,19 @@ const Enticer = ({ AddToCart }) => {
                 return (
                   <div
                     key={id}
-                    className="bg-white hover:border border-black transition ease-in-out delay-150 rounded-lg text-center"
+                    className="bg-white hover:border border-black transition ease-in-out delay-150 rounded-lg text-center px-2"
                   >
                     <img src={watch.img} alt={watch.model} />
                     <div className="py-4">
                       <h3 className="text-base">{watch.brand}</h3>
-                      <h2 className="text-lg font-bold">{watch.model}</h2>
-                      <p className="font-semibold">
+                      <h2 className="text-sm py-2 md:text-lg font-bold">{watch.model}</h2>
+                      <p className="font-medium md:font-semibold">
                         ₹ {watch.price.toLocaleString()} (inclusive of all
                         taxes)
                       </p>
                       <button
                         onClick={() => AddToCart(watch)}
-                        className="bg-black text-white py-2 px-4 mt-4 rounded-xl hover:bg-blue-800"
+                        className="bg-black text-white py-1 md:py-2 px-4 mt-4 rounded-xl hover:bg-blue-800"
                       >
                         Add to Cart
                       </button>
